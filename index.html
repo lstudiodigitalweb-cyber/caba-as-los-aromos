@@ -5,134 +5,206 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cabañas Los Aromos</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
-body {
+
+:root {
+    --verde-oscuro: #1F3D2B;
+    --verde-suave: #3E6B4F;
+    --beige: #F4F1EB;
+}
+
+* {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f8f8f5;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--beige);
     color: #333;
 }
 
-header {
-    height: 90vh;
-    background: url('img/piscina1.png') center/cover no-repeat;
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* HERO */
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('img/piscina1.png') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
+    padding: 20px;
 }
 
-header h1 {
-    font-size: 3rem;
-    background: rgba(0,0,0,0.4);
-    padding: 20px 40px;
-    border-radius: 8px;
-    letter-spacing: 2px;
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
 }
 
-section {
-    padding: 60px 20px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-h2 {
-    text-align: center;
+.hero p {
+    font-size: 1.2rem;
     margin-bottom: 30px;
-    font-weight: 300;
-    letter-spacing: 1px;
-}
-
-.descripcion {
-    text-align: center;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    max-width: 700px;
-    margin: auto;
-}
-
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.galeria img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.contacto {
-    text-align: center;
-    background: #e9ece6;
-    padding: 60px 20px;
 }
 
 .boton {
     display: inline-block;
-    margin-top: 20px;
-    padding: 15px 30px;
-    background-color: #5c7a5c;
+    padding: 14px 30px;
+    margin: 10px;
+    background: var(--verde-suave);
     color: white;
     text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
+    border-radius: 40px;
+    font-weight: 600;
     transition: 0.3s;
 }
 
 .boton:hover {
-    background-color: #3f5c3f;
+    background: var(--verde-oscuro);
+}
+
+/* SECCIONES */
+
+.section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.section p {
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.7;
+}
+
+/* TARJETAS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h3 {
+    margin-bottom: 15px;
+}
+
+/* CONTACTO */
+
+.contacto {
+    background: var(--verde-oscuro);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.contacto h2 {
+    margin-bottom: 20px;
 }
 
 footer {
     text-align: center;
     padding: 20px;
-    font-size: 0.9rem;
     background: #ddd;
+    font-size: 0.9rem;
 }
+
+@media(max-width:768px){
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Cabañas Los Aromos</h1>
-</header>
-
-<section>
-    <h2>Un Refugio Natural en Salta</h2>
-    <div class="descripcion">
-        <p>
-        Descansá rodeado de naturaleza, tranquilidad y confort.
-        </p>
-        <p>
-        En <strong>Cabañas Los Aromos</strong> combinamos privacidad, jardín, piscina y un ambiente cálido para que vivas una experiencia auténtica.
-        </p>
-        <p>
-        🌿 Silencio. Naturaleza. Descanso real.
-        </p>
+<section class="hero">
+    <div>
+        <h1>Cabañas Los Aromos</h1>
+        <p>Naturaleza, descanso y confort en el corazón de Salta</p>
+        <a href="#espacios" class="boton">Descubrir</a>
+        <a href="tel:02612054428" class="boton">Reservar Ahora</a>
     </div>
+</section>
 
-    <div class="galeria">
-        <img src="img/piscina1.png" alt="Piscina Cabañas Los Aromos">
-        <img src="img/piscina2.png" alt="Piscina y Jardín">
-        <img src="img/entrada.png" alt="Entrada Cabañas">
+<section class="section" id="espacios">
+    <h2>Un entorno pensado para disfrutar</h2>
+    <p>
+        Espacios amplios, jardín, piscina y ambientes acogedores que invitan a vivir cada momento con tranquilidad.
+    </p>
+
+    <div class="cards">
+        <div class="card">
+            <img src="img/piscina1.png" alt="Piscina">
+            <div class="card-content">
+                <h3>Piscina al aire libre</h3>
+                <p>Un espacio ideal para relajarse bajo el cielo de Salta y disfrutar del aire libre.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img/entrada.png" alt="Entrada">
+            <div class="card-content">
+                <h3>Ambientes acogedores</h3>
+                <p>Detalles cuidados que combinan comodidad, calidez y armonía.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img/piscina2.png" alt="Jardín">
+            <div class="card-content">
+                <h3>Entorno natural</h3>
+                <p>Amplios espacios verdes que brindan privacidad y serenidad.</p>
+            </div>
+        </div>
     </div>
 </section>
 
 <section class="contacto">
-    <h2>Contacto</h2>
-    <p><strong>Dirección:</strong><br>
-    Av. San Martín 2377, A4401 Salta</p>
-
-    <p><strong>Teléfono:</strong><br>
-    0261 205-4428</p>
-
-    <a href="tel:02612054428" class="boton">
-        📞 Llamar Ahora
-    </a>
+    <h2>Tu próxima escapada comienza aquí</h2>
+    <p>Av. San Martín 2377, A4401 Salta</p>
+    <p>0261 205-4428</p>
+    <a href="tel:02612054428" class="boton">Llamar Ahora</a>
 </section>
 
 <footer>
@@ -141,3 +213,4 @@ footer {
 
 </body>
 </html>
+    
